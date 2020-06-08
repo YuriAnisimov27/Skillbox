@@ -1,20 +1,34 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Есть строка с перечислением фильмов
+# Создайте списки:
 
-my_favorite_movies = 'Терминатор, Пятый элемент, Аватар, Чужие, Назад в будущее'
+# моя семья (минимум 3 элемента, есть еще дедушки и бабушки, если что)
+my_family = []
 
-# Выведите на консоль с помощью индексации строки, последовательно:
-#   первый фильм
-#   последний
-#   второй
-#   второй с конца
+my_family.append("father")
+my_family.append("mother")
+my_family.append("brother")
+my_family.append("sister")
 
-# Переопределять my_favorite_movies и использовать .split() нельзя.
-# Запятая не должна выводиться.
+# список списков приблизителного роста членов вашей семьи
+my_family_height = [
+    # ['имя', рост],
+    [],
+]
 
-# TODO здесь ваш код
+my_family_height = my_family_height * len(my_family)
+my_family_height[0] = [my_family[0], 180]
+my_family_height[1] = [my_family[1], 160]
+my_family_height[2] = [my_family[2], 80]
+my_family_height[3] = [my_family[3], 130]
+print(my_family_height)
 
-print(my_favorite_movies[:10], my_favorite_movies[-15:len(my_favorite_movies)],
-      my_favorite_movies[12:25], my_favorite_movies[-22:-17])
+# Выведите на консоль рост отца в формате
+#   Рост отца - ХХ см
+print('Рост отца -', my_family_height[0][1], 'см')
+
+# Выведите на консоль общий рост вашей семьи как сумму ростов всех членов
+#   Общий рост моей семьи - ХХ см
+print('Общий рост моей семьи -', my_family_height[0][1] + my_family_height[1][1] +
+      my_family_height[2][1] + my_family_height[3][1], 'см')
