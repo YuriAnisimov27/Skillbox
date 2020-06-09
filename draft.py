@@ -1,48 +1,28 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Есть список песен группы Depeche Mode со временем звучания с точносттю до долей минут
+# есть зашифрованное сообщение
 
-violator_songs_list = [
-    ['World in My Eyes', 4.86],
-    ['Sweetest Perfection', 4.43],
-    ['Personal Jesus', 4.56],
-    ['Halo', 4.9],
-    ['Waiting for the Night', 6.07],
-    ['Enjoy the Silence', 4.20],
-    ['Policy of Truth', 4.76],
-    ['Blue Dress', 4.29],
-    ['Clean', 5.83],
+secret_message = [
+    'квевтфпп6щ3стмзалтнмаршгб5длгуча',
+    'дьсеы6лц2бане4т64ь4б3ущея6втщл6б',
+    'т3пплвце1н3и2кд4лы12чф1ап3бкычаь',
+    'ьд5фму3ежородт9г686буиимыкучшсал',
+    'бсц59мегщ2лятьаьгенедыв9фк9ехб1а',
 ]
 
-# распечатайте общее время звучания трех песен: 'Halo', 'Enjoy the Silence' и 'Clean' в формате
-#   Три песни звучат ХХХ минут
-# Обратите внимание, что делать много вычислений внутри print() - плохой стиль.
-# Лучше заранее вычислить необходимое, а затем в print(xxx, yyy, zzz)
+# ключ к расшифровке:
+#   первое слово - 4-я буква
+#   второе слово - буквы с 10 по 13, включительно
+#   третье слово - буквы с 6 по 15, включительно, через одну
+#   четвертое слово - буквы с 8 по 13, включительно, в обратном порядке
+#   пятое слово - буквы с 17 по 21, включительно, в обратном порядке
+#
+# Требуется задать конкретные индексы, например secret_message[3][12:23:4]
+# Если нужны вычисления и разные пробы - делайте это в консоли пайтона, тут нужен только результат
 
-# TODO здесь ваш код
+# TODO вывести расшифрованное сообщение
 
-minutes = violator_songs_list[3][1] + violator_songs_list[5][1] + violator_songs_list[8][1]
-print("Три песни звучат", round(minutes, 2), "минут")
-
-# Есть словарь песен группы Depeche Mode
-violator_songs_dict = {
-    'World in My Eyes': 4.76,
-    'Sweetest Perfection': 4.43,
-    'Personal Jesus': 4.56,
-    'Halo': 4.30,
-    'Waiting for the Night': 6.07,
-    'Enjoy the Silence': 4.6,
-    'Policy of Truth': 4.88,
-    'Blue Dress': 4.18,
-    'Clean': 5.68,
-}
-
-# распечатайте общее время звучания трех песен: 'Sweetest Perfection', 'Policy of Truth' и 'Blue Dress'
-#   А другие три песни звучат ХХХ минут
-
-# TODO здесь ваш код
-
-minutes_2 = violator_songs_dict['Sweetest Perfection'] + violator_songs_dict['Policy of Truth']\
-            + violator_songs_dict['Blue Dress']
-print('А другие три песни звучат', round(minutes_2, 2), 'минут')
+answer = secret_message[0][3], secret_message[1][9:12 + 1], secret_message[2][5:14 + 1:2], \
+         secret_message[3][12:6:-1], secret_message[4][20:16 - 1:-1]
+print(*answer)

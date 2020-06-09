@@ -22,3 +22,7 @@ secret_message = [
 # Если нужны вычисления и разные пробы - делайте это в консоли пайтона, тут нужен только результат
 
 # TODO вывести расшифрованное сообщение
+
+answer = secret_message[0][3], secret_message[1][9:12 + 1], secret_message[2][5:14 + 1:2], \
+         secret_message[3][12:6:-1], secret_message[4][20:16 - 1:-1]
+print(*answer)
