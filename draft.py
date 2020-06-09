@@ -1,34 +1,36 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Создайте списки:
+# есть список животных в зоопарке
 
-# моя семья (минимум 3 элемента, есть еще дедушки и бабушки, если что)
-my_family = []
+zoo = ['lion', 'kangaroo', 'elephant', 'monkey', ]
 
-my_family.append("father")
-my_family.append("mother")
-my_family.append("brother")
-my_family.append("sister")
+# посадите медведя (bear) между львом и кенгуру
+#  и выведите список на консоль
+# TODO здесь ваш код
 
-# список списков приблизителного роста членов вашей семьи
-my_family_height = [
-    # ['имя', рост],
-    [],
-]
+zoo.insert(1, 'bear')
+print(*zoo)
 
-my_family_height = my_family_height * len(my_family)
-my_family_height[0] = [my_family[0], 180]
-my_family_height[1] = [my_family[1], 160]
-my_family_height[2] = [my_family[2], 80]
-my_family_height[3] = [my_family[3], 130]
-print(my_family_height)
+# добавьте птиц из списка birds в последние клетки зоопарка
+birds = ['rooster', 'ostrich', 'lark', ]
+#  и выведите список на консоль
+# TODO здесь ваш код
 
-# Выведите на консоль рост отца в формате
-#   Рост отца - ХХ см
-print('Рост отца -', my_family_height[0][1], 'см')
+zoo.extend(birds)
+print(*zoo)
 
-# Выведите на консоль общий рост вашей семьи как сумму ростов всех членов
-#   Общий рост моей семьи - ХХ см
-print('Общий рост моей семьи -', my_family_height[0][1] + my_family_height[1][1] +
-      my_family_height[2][1] + my_family_height[3][1], 'см')
+# уберите слона
+#  и выведите список на консоль
+# TODO здесь ваш код
+
+zoo.remove('elephant')
+print(*zoo)
+
+# выведите на консоль в какой клетке сидит лев (lion) и жаворонок (lark).
+# Номера при выводе должны быть понятны простому человеку, не программисту.
+# TODO здесь ваш код
+
+print(zoo.index('lion') + 1)
+print(zoo.index('lark') + 1)
+
