@@ -1,9 +1,8 @@
-hole_x, hole_y = 8, 9
-brick_x, brick_y, brick_z = 3, 6, 11
+a, b = 2, 1
 
-middle = brick_x + brick_y + brick_z - max(brick_x, brick_y, brick_z) - min(brick_x, brick_y, brick_z)
-if max(hole_x, hole_y) >= middle and \
-        min(hole_x, hole_y) >= min(brick_x, brick_y, brick_z):
-    print('ДА')
-else:
-    print('НЕТ')
+answer = 0
+counter = b
+while counter <= a:
+    counter += b
+    answer += 1
+print(f'Целочисленное деление {a} на {b} дает {answer}')
