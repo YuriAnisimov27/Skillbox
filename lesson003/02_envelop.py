@@ -22,8 +22,15 @@ paper_x, paper_y = 8, 9
 
 # TODO здесь ваш код
 
+if max(envelop_x, envelop_y) >= max(paper_x, paper_y) and\
+        min(envelop_x, envelop_y) >= min(paper_x, paper_y):
+    print('ДА')
+else:
+    print('НЕТ')
+
 # Усложненное задание, решать по желанию.
-# Заданы размеры hole_x, hole_y прямоугольного отверстия и размеры brick_х, brick_у, brick_z кирпича (все размеры
+# Заданы размеры hole_x, hole_y прямоугольного отверстия и размеры
+# brick_х, brick_у, brick_z кирпича (все размеры
 # могут быть в диапазоне от 1 до 1000)
 #
 # Определить, пройдет ли кирпич через отверстие (грани кирпича параллельны сторонам отверстия)
@@ -50,3 +57,10 @@ paper_x, paper_y = 8, 9
 # (просто раскоментировать нужную строку и проверить свой код)
 
 # TODO здесь ваш код
+
+middle = brick_x + brick_y + brick_z - max(brick_x, brick_y, brick_z) - min(brick_x, brick_y, brick_z)
+if max(hole_x, hole_y) >= middle and \
+        min(hole_x, hole_y) >= min(brick_x, brick_y, brick_z):
+    print('ДА')
+else:
+    print('НЕТ')
