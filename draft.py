@@ -1,33 +1,23 @@
-goods = {
-    'Лампа': '12345',
-    'Стол': '23456',
-    'Диван': '34567',
-    'Стул': '45678',
-}
+# -*- coding: utf-8 -*-
 
-store = {
-    '12345': [
-        {'quantity': 27, 'price': 42},
-    ],
-    '23456': [
-        {'quantity': 22, 'price': 510},
-        {'quantity': 32, 'price': 520},
-    ],
-    '34567': [
-        {'quantity': 2, 'price': 1200},
-        {'quantity': 1, 'price': 1150},
-    ],
-    '45678': [
-        {'quantity': 50, 'price': 100},
-        {'quantity': 12, 'price': 95},
-        {'quantity': 43, 'price': 97},
-    ],
-}
+# (цикл for)
 
-for i in goods:
-    total_count, total_cost = 0, 0
-    if goods[i] in store:
-        for item in store[goods[i]]:
-            total_count += item['quantity']
-            total_cost += item['quantity'] * item['price']
-        print(f'на складе: {i} - {total_count} шт, стоимость {total_cost} руб')
+import simple_draw as sd
+
+rainbow_colors = (sd.COLOR_RED, sd.COLOR_ORANGE, sd.COLOR_YELLOW, sd.COLOR_GREEN,
+                  sd.COLOR_CYAN, sd.COLOR_BLUE, sd.COLOR_PURPLE)
+
+# Нарисовать радугу: 7 линий разного цвета толщиной 4 с шагом 5 из точки (50, 50) в точку (350, 450)
+# TODO здесь ваш код
+
+for i in range(7):
+    point = sd.get_point(400, -200)
+    radius = (500 + 30 * i)
+    sd.circle(point, radius, width=30, color=rainbow_colors[i])
+
+# Усложненное задание, делать по желанию.
+# Нарисовать радугу дугами от окружности (cсм sd.circle) за нижним краем экрана,
+# поэкспериментировать с параметрами, что бы было красиво
+# TODO здесь ваш код
+
+sd.pause()
