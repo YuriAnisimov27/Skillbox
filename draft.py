@@ -1,23 +1,29 @@
 # -*- coding: utf-8 -*-
 
 # (цикл for)
+import simple_draw
 
-import simple_draw as sd
+# Нарисовать стену из кирпичей. Размер кирпича - 100х50
+# Использовать вложенные циклы for
 
-rainbow_colors = (sd.COLOR_RED, sd.COLOR_ORANGE, sd.COLOR_YELLOW, sd.COLOR_GREEN,
-                  sd.COLOR_CYAN, sd.COLOR_BLUE, sd.COLOR_PURPLE)
-
-# Нарисовать радугу: 7 линий разного цвета толщиной 4 с шагом 5 из точки (50, 50) в точку (350, 450)
 # TODO здесь ваш код
 
-for i in range(7):
-    point = sd.get_point(400, -200)
-    radius = (500 + 30 * i)
-    sd.circle(point, radius, width=30, color=rainbow_colors[i])
+simple_draw.resolution = (1200, 600)
 
-# Усложненное задание, делать по желанию.
-# Нарисовать радугу дугами от окружности (cсм sd.circle) за нижним краем экрана,
-# поэкспериментировать с параметрами, что бы было красиво
-# TODO здесь ваш код
+# point = simple_draw.get_point(0, 0)
+# point2 = simple_draw.get_point(200, 100)
+# simple_draw.rectangle(point, point2, width=2)
 
-sd.pause()
+
+for y in range(10):
+    for x in range(10):
+        if y % 2 == 0:
+            point_a = simple_draw.get_point(100 * x, 50 * y)
+            point_b = simple_draw.get_point(100 * x + 100, 50 * y + 50)
+            simple_draw.rectangle(point_a, point_b, width=3)
+        if y % 2 != 0:
+            point_a = simple_draw.get_point(100 * x + 50, 50 * y)
+            point_b = simple_draw.get_point(100 * x + 150, 50 * y + 50)
+            simple_draw.rectangle(point_a, point_b, width=3)
+
+simple_draw.pause()
