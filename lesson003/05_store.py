@@ -48,8 +48,10 @@ store = {
 
 # TODO здесь ваш код
 
-
-
-
-
-
+for i in goods:
+    total_count, total_cost = 0, 0
+    if goods[i] in store:
+        for item in store[goods[i]]:
+            total_count += item['quantity']
+            total_cost += item['quantity'] * item['price']
+        print(f'на складе: {i} - {total_count} шт, стоимость {total_cost} руб')
