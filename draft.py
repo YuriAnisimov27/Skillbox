@@ -1,29 +1,25 @@
-# -*- coding: utf-8 -*-
-
-# (цикл for)
 import simple_draw
 
-# Нарисовать стену из кирпичей. Размер кирпича - 100х50
-# Использовать вложенные циклы for
-
-# TODO здесь ваш код
-
-simple_draw.resolution = (1200, 600)
-
-# point = simple_draw.get_point(0, 0)
-# point2 = simple_draw.get_point(200, 100)
-# simple_draw.rectangle(point, point2, width=2)
+simple_draw.resolution = (1300, 700)
 
 
-for y in range(10):
-    for x in range(10):
-        if y % 2 == 0:
-            point_a = simple_draw.get_point(100 * x, 50 * y)
-            point_b = simple_draw.get_point(100 * x + 100, 50 * y + 50)
-            simple_draw.rectangle(point_a, point_b, width=3)
-        if y % 2 != 0:
-            point_a = simple_draw.get_point(100 * x + 50, 50 * y)
-            point_b = simple_draw.get_point(100 * x + 150, 50 * y + 50)
-            simple_draw.rectangle(point_a, point_b, width=3)
+def smily_face(x, y, colore):
+    point_center = simple_draw.get_point(x, y)
+    left_eye = simple_draw.get_point(x - 40, y + 27)
+    right_eye = simple_draw.get_point(x + 40, y + 27)
+
+    simple_draw.circle(point_center, 88, color=colore, width=4)
+    simple_draw.circle(left_eye, 23, color=colore, width=4)
+    simple_draw.circle(right_eye, 23, color=colore, width=4)
+
+    for i in range(10):
+        new_center = simple_draw.get_point(x, y - i * 3)
+        simple_draw.circle(new_center, 20 - i, width=0)
+
+
+for _ in range(10):
+    x = simple_draw.random_number(0, 1300)
+    y = simple_draw.random_number(0, 700)
+    smily_face(x, y, simple_draw.random_color())
 
 simple_draw.pause()
