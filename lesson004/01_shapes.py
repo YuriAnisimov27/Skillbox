@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import simple_draw as sd
 
 # Часть 1.
 # Написать функции рисования равносторонних геометрических фигур:
@@ -29,6 +28,48 @@ import simple_draw as sd
 
 # TODO здесь ваш код
 
+import simple_draw as sd
+sd.resolution = (1200, 600)
+
+
+def draw_3_angle(start_point, end_point, angle, line_length):
+    point = sd.get_point(start_point, end_point)
+    for i in range(3):
+        point_draw = sd.get_vector(start_point=point, angle=i * angle, length=line_length)
+        point_draw.draw()
+        point = point_draw.end_point
+
+
+def draw_4_angle(start_point, end_point, angle, line_length):
+    point = sd.get_point(start_point, end_point)
+    for i in range(4):
+        point_draw = sd.get_vector(start_point=point, angle=i * angle, length=line_length)
+        point_draw.draw()
+        point = point_draw.end_point
+
+
+def draw_5_angle(start_point, end_point, angle, line_length):
+    point = sd.get_point(start_point, end_point)
+    for i in range(5):
+        point_draw = sd.get_vector(start_point=point, angle=i * angle, length=line_length)
+        point_draw.draw()
+        point = point_draw.end_point
+
+
+def draw_6_angle(start_point, end_point, angle, line_length):
+    point = sd.get_point(start_point, end_point)
+    for i in range(6):
+        point_draw = sd.get_vector(start_point=point, angle=i * angle, length=line_length)
+        point_draw.draw()
+        point = point_draw.end_point
+
+
+draw_3_angle(100, 100, 120, 100)
+draw_4_angle(300, 100, 90, 100)
+draw_5_angle(600, 100, 72, 100)
+draw_6_angle(900, 100, 60, 100)
+sd.pause()
+
 # Часть 1-бис.
 # Попробуйте прикинуть обьем работы, если нужно будет внести изменения в этот код.
 # Скажем, связывать точки не линиями, а дугами. Или двойными линиями. Или рисовать круги в угловых точках. Или...
@@ -53,4 +94,12 @@ import simple_draw as sd
 # Будьте ленивыми, не используйте копи-пасту!
 
 
-sd.pause()
+def draw_figure(start_point, end_point, angles_count, line_length):
+    point = sd.get_point(start_point, end_point)
+    angle = 360 // angles_count
+    for i in range(angles_count):
+        point_draw = sd.get_vector(start_point=point, angle=i * angle, length=line_length)
+        point_draw.draw()
+        point = point_draw.end_point
+
+
