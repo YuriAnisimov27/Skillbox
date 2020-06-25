@@ -7,6 +7,40 @@
 
 # TODO здесь ваш код
 
+from .district.central_street.house1.room1 import folks
+
+citizens = ' ,'.join(folks)
+print(f'На районе живут: {citizens}', end=' ,')
+from .district.central_street.house1.room2 import folks
+
+citizens = ' ,'.join(folks)
+print(citizens, end=' ,')
+
+from .district.central_street.house2.room1 import folks
+
+citizens = ' ,'.join(folks)
+print(citizens, end=' ,')
+from .district.central_street.house2.room2 import folks
+
+citizens = ' ,'.join(folks)
+print(citizens, end=' ,')
+from .district.soviet_street.house1.room1 import folks
+
+citizens = ' ,'.join(folks)
+print(citizens, end=' ,')
+from .district.soviet_street.house1.room2 import folks
+
+citizens = ' ,'.join(folks)
+print(citizens, end=' ,')
+from .district.soviet_street.house2.room1 import folks
+
+citizens = ' ,'.join(folks)
+print(citizens, end=' ,')
+from .district.soviet_street.house2.room2 import folks
+
+citizens = ' ,'.join(folks)
+print(citizens, end='.')
+
 
 
 
